@@ -3,68 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Wishland Technology — Good Lives Initiative</title>
-  <meta name="description" content="Save Earth Initiative — Helping farmers using technology & media streaming to simplify day-to-day activities." />
+  <title>Wishland Technology — WireWhat & Save Earth Initiative</title>
+  <meta name="description" content="WireWhat real-time media platform followed by Save Earth Initiative." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#f6fbff;
       --card:#ffffff;
-      --accent:#0b84ff; /* blue */
-      --accent-2:#1aa56a; /* green */
+      --accent:#0b84ff;
+      --accent-2:#1aa56a;
       --muted:#6b7280;
       --glass: rgba(255,255,255,0.7);
       --radius:14px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-family: 'Inter', system-ui;
     }
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg,var(--bg),#eef7f2);color:#0f172a;line-height:1.5}
     header{backdrop-filter:saturate(120%) blur(6px);position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.55);border-bottom:1px solid rgba(15,23,42,0.04)}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--accent)}
-    .brand .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:white;font-weight:800}
     nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
     nav a{color:rgba(15,23,42,0.8);text-decoration:none;padding:8px 10px;border-radius:10px}
     nav a:hover{background:rgba(11,132,255,0.08)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--accent)}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:white;font-weight:800}
     .hero{display:grid;grid-template-columns:1fr;gap:24px;padding:56px 0}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
-    .hero h1{font-size:clamp(28px,4vw,44px);margin:0 0 8px}
-    .tagline{color:var(--muted);margin-bottom:16px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#00a3ff);color:white;box-shadow:0 6px 18px rgba(11,132,255,0.12)}
-    .btn-outline{background:transparent;border:1.2px solid rgba(15,23,42,0.06);color:var(--accent)}
-    .illustration{background:linear-gradient(180deg,rgba(11,132,255,0.06),rgba(26,165,106,0.04));padding:18px;border-radius:14px}
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 8px}
     section{padding:48px 0}
     h2{margin:0 0 12px;font-size:20px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .btn{padding:12px 18px;border-radius:10px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#00a3ff);color:white}
+    .btn-outline{border:1.2px solid rgba(15,23,42,0.1);color:var(--accent)}
+    .grid{display:grid;gap:18px}
     .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(11,132,255,0.04);border:1px solid rgba(15,23,42,0.04)}
     .feature{display:flex;gap:12px;align-items:flex-start}
-    .feature .icon{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),var(--accent));display:inline-flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    .apps-list{display:flex;flex-direction:column;gap:12px}
-    .testimonial{background:linear-gradient(180deg,#ffffff, #f7fffb);padding:16px;border-radius:10px;border:1px solid rgba(26,165,106,0.08)}
-    footer{padding:28px 0;background:transparent;border-top:1px solid rgba(15,23,42,0.03)}
-    .contact-form{display:grid;gap:12px}
-    input,textarea{padding:12px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);font-size:14px}
-    textarea{min-height:120px}
-    .muted{color:var(--muted)}
+    .icon{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
     @media(min-width:800px){
       .hero-grid{grid-template-columns:1fr 420px}
-      .grid{grid-template-columns:repeat(3,1fr)}
-      .apps-list{flex-direction:row}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
     }
-    @media(max-width:800px){
-      nav ul{display:none}
-      .container{padding:16px}
-      .grid{grid-template-columns:1fr}
-    }
-    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent-2),#00b2ff);color:white;font-weight:600}
-    .kpi{display:flex;gap:18px;align-items:center}
-    .kpi .num{font-weight:800;font-size:20px}
-    .small{font-size:13px;color:var(--muted)}
-    .logo-sm{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:white}
   </style>
 </head>
 <body>
@@ -74,287 +53,132 @@
         <div class="logo">W</div>
         <div>
           <div style="font-size:15px">Wishland Technology</div>
-          <div style="font-size:12px;color:var(--muted)">Save Earth Initiative</div>
+          <div style="font-size:12px;color:var(--muted)">WireWhat Platform</div>
         </div>
       </div>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#initiatives">Initiatives</a></li>
+          <li><a href="#wirewhat">WireWhat</a></li>
+          <li><a href="#saveearth">Save Earth</a></li>
           <li><a href="#solutions">Solutions</a></li>
           <li><a href="#apps">Apps</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div style="display:flex;gap:10px;align-items:center">
-        <a class="btn btn-primary" href="#contact">Get in touch</a>
-      </div>
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
     </div>
   </header>
 
   <main class="container">
+
+    <!-- UPDATED HERO: WIREWHAT FIRST -->
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="pill">Save Earth • Helping Farmers</div>
-          <h1>Technology & Media to Empower Farmers — Everyday.</h1>
-          <p class="tagline">Wishland Technology builds lightweight apps, streaming tools and field-first solutions that help farmers monitor, learn and sell — while protecting the planet.</p>
-          <div class="cta">
-            <a class="btn btn-primary" href="#apps">Explore Apps</a>
-            <a class="btn btn-outline" href="#initiatives">Our Initiatives</a>
-          </div>
-
-          <div style="margin-top:28px;display:flex;gap:20px;flex-wrap:wrap;align-items:center">
-            <div class="kpi">
-              <div style="display:flex;flex-direction:column">
-                <div class="num">12k+</div>
-                <div class="small">Farmers reached</div>
-              </div>
-            </div>
-            <div class="kpi">
-              <div style="display:flex;flex-direction:column">
-                <div class="num">8</div>
-                <div class="small">Active apps</div>
-              </div>
-            </div>
-            <div class="kpi">
-              <div style="display:flex;flex-direction:column">
-                <div class="num">24/7</div>
-                <div class="small">Streaming support</div>
-              </div>
-            </div>
+          <div class="pill" style="display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:600;margin-bottom:12px">WireWhat • Real-time Media Platform</div>
+          <h1>WireWhat — Intelligent Media, Alerts & Streaming Infrastructure</h1>
+          <p style="color:var(--muted)">A scalable communication layer powering live streams, alert pipelines, integrations and rural connectivity apps.</p>
+          <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+            <a href="#wirewhat" class="btn btn-primary">Explore WireWhat</a>
+            <a href="#saveearth" class="btn btn-outline">Save Earth Initiative</a>
           </div>
         </div>
 
-        <div class="illustration">
-          <!-- Simple SVG illustration -->
-          <svg width="100%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img">
-            <rect x="0" y="0" width="600" height="400" rx="14" fill="url(#g)" />
-            <defs>
-              <linearGradient id="g" x1="0" x2="1">
-                <stop offset="0" stop-color="#e6f7ff" />
-                <stop offset="1" stop-color="#f0fff4" />
-              </linearGradient>
-            </defs>
-            <g transform="translate(36,28)">
-              <circle cx="120" cy="80" r="40" fill="#0b84ff" opacity="0.9"/>
-              <rect x="200" y="20" width="160" height="110" rx="10" fill="#1aa56a" opacity="0.95"/>
-              <g transform="translate(8,170)">
-                <rect width="540" height="120" rx="10" fill="#fff" stroke="rgba(0,0,0,0.03)"/>
-                <text x="18" y="36" font-size="18" fill="#0f172a">Live stream: Farmer training</text>
-                <text x="18" y="64" font-size="14" fill="#6b7280">Watch short sessions on soil, irrigation and market rates.</text>
-              </g>
-            </g>
+        <div class="illustration" style="background:linear-gradient(180deg,rgba(11,132,255,0.06),rgba(26,165,106,0.04));padding:18px;border-radius:14px">
+          <svg width="100%" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="340" rx="14" fill="#eef7ff" />
+            <text x="40" y="70" font-size="28" fill="#0b84ff">WireWhat Stream</text>
+            <text x="40" y="110" font-size="16" fill="#6b7280">RTMP ingest → HLS playback → Alerts</text>
+            <rect x="40" y="150" width="520" height="140" rx="10" fill="#fff" stroke="#e5e7eb" />
+            <text x="60" y="190" font-size="16" fill="#0f172a">Live: Market Broadcast / Training</text>
+            <text x="60" y="220" font-size="14" fill="#6b7280">Adaptive low-bandwidth mode enabled</text>
           </svg>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <h2>About Wishland Technology</h2>
-      <div class="grid" style="grid-template-columns:1fr 2fr">
-        <div class="card">
-          <div style="font-weight:700;margin-bottom:8px">Our Mission</div>
-          <div class="small">To enable sustainable farming and resilient livelihoods through easy-to-use apps and media streaming tools designed for field conditions.</div>
-        </div>
-        <div class="card">
-          <p>We combine lightweight mobile apps, low-bandwidth streaming and on-field training to help farmers make better decisions. Our products are built for low-connectivity environments and focused on practical outcomes: higher yields, lower waste and stronger communities.</p>
-          <ul class="small" style="margin-top:12px;padding-left:18px">
-            <li>Local-language content delivery via streaming</li>
-            <li>Crop advisory through simple mobile apps</li>
-            <li>Market-linkage and price alerts</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- NEW WIREWHAT SECTION -->
+    <section id="wirewhat">
+      <h2>WireWhat — Enterprise Media Platform</h2>
+      <p style="color:var(--muted);max-width:720px;margin-bottom:24px">
+        WireWhat is a high‑availability, enterprise‑grade real‑time media and communication
+        infrastructure designed for organizations that demand reliable streaming,
+        event-driven alerts, and seamless integrations across business systems.
+        Built on scalable cloud-native components and optimized for low-latency delivery.
+      </p>
 
-    <section id="initiatives">
-      <h2>Save Earth Initiative</h2>
-      <div class="grid">
+      <div class="grid grid-3">
         <div class="card feature">
           <div class="icon">E</div>
           <div>
-            <div style="font-weight:700">Eco-Farming Workshops</div>
-            <div class="small">Hands-on training on organic methods, water conservation, and soil health — streamed weekly to villages.</div>
+            <b>Enterprise-Grade Streaming</b>
+            <div class="small">Multi-region RTMP ingest, adaptive HLS playback, SLA-backed uptime and autoscaling clusters.</div>
           </div>
         </div>
 
         <div class="card feature">
-          <div class="icon">S</div>
+          <div class="icon">Q</div>
           <div>
-            <div style="font-weight:700">Sustainable Practices Lab</div>
-            <div class="small">Pilot programs that help farmers test composting, drip irrigation and seed-saving techniques.</div>
+            <b>Event & Alert Orchestration</b>
+            <div class="small">Webhook triggers, scheduled pipelines, automated fallbacks, and enterprise notification routing.</div>
           </div>
         </div>
 
         <div class="card feature">
-          <div class="icon">T</div>
+          <div class="icon">A</div>
           <div>
-            <div style="font-weight:700">Tree & Soil Programs</div>
-            <div class="small">Community tree-planting and soil-restoration initiatives to restore local micro-climates.</div>
+            <b>Advanced Integrations API</b>
+            <div class="small">Secure REST hooks, IAM-ready authentication, analytics endpoints, and integration with internal dashboards.</div>
           </div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:24px;grid-template-columns:1fr 1fr;gap:24px">
+        <div class="card">
+          <b>Security & Compliance</b>
+          <div class="small">TLS everywhere, tokenized stream access, audit logs, role-based controls.</div>
+        </div>
+        <div class="card">
+          <b>Enterprise Observability</b>
+          <div class="small">Real-time metrics, stream health dashboards, latency monitors, and alert analytics.</div>
         </div>
       </div>
     </section>
 
+    <!-- SAVE EARTH (RENAMED + MOVED BELOW WIREWHAT) -->
+    <section id="saveearth">
+      <h2>Upcoming -- Save Earth Initiative (Community Impact Program))</h2>
+      <div class="grid grid-3">
+        <div class="card feature"><div class="icon">E</div><div><b>Eco-Farming Workshops</b><div class="small">Weekly training streamed to rural communities.</div></div></div>
+        <div class="card feature"><div class="icon">S</div><div><b>Sustainable Practices Lab</b><div class="small">Testing composting, water-saving and organic models.</div></div></div>
+        <div class="card feature"><div class="icon">T</div><div><b>Tree & Soil Programs</b><div class="small">Local tree planting and soil restoration efforts.</div></div></div>
+      </div>
+    </section>
+
+    <!-- ORIGINAL SECTIONS BELOW (UNCHANGED STRUCTURE) -->
+
     <section id="solutions">
       <h2>Solutions for Farmers</h2>
-      <div class="grid">
-        <div class="card">
-          <div style="font-weight:700">Field Assistant App</div>
-          <div class="small">Offline-first mobile app with daily tips, pest alerts and image-based diagnosis — works on feature phones via lite web view.</div>
-        </div>
-        <div class="card">
-          <div style="font-weight:700">Market Link Streaming</div>
-          <div class="small">Live market price broadcasts and seller-buyer sessions so farmers get real-time price visibility.</div>
-        </div>
-        <div class="card">
-          <div style="font-weight:700">Advisory Chat</div>
-          <div class="small">Simple chat and voice notes to connect local extension officers with farmer queries.</div>
-        </div>
+      <div class="grid grid-3">
+        <div class="card"><b>Field Assistant App</b><div class="small">Offline-first mobile advisory.</div></div>
+        <div class="card"><b>Market Link Streaming</b><div class="small">Live price broadcasts.</div></div>
+        <div class="card"><b>Advisory Chat</b><div class="small">Voice + text assistant.</div></div>
       </div>
     </section>
 
     <section id="apps">
       <h2>Apps & Products</h2>
-      <div class="card" style="display:flex;gap:18px;align-items:center">
-        <div style="flex:1">
-          <div style="font-weight:700">Wishland Field</div>
-          <div class="small">A lightweight app for daily logs, crop reminders and advisory videos.</div>
-          <div style="margin-top:12px" class="apps-list">
-            <div class="card small" style="padding:12px">Android APK (lite)</div>
-            <div class="card small" style="padding:12px">SMS & IVR integration</div>
-            <div class="card small" style="padding:12px">Local language packs</div>
-          </div>
-        </div>
-        <div style="width:220px;text-align:center">
-          <div style="font-weight:700">Streaming</div>
-          <div class="small">Low-latency, low-bandwidth live and recorded sessions with offline caching.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="media">
-      <h2>Media Streaming Solutions</h2>
-      <div class="grid">
-        <div class="card feature">
-          <div class="icon">L</div>
-          <div>
-            <div style="font-weight:700">Low-Bandwidth Live</div>
-            <div class="small">Adaptive bitrate streaming to reach farmers on slow networks. Supports RTMP ingest and HLS playback.</div>
-          </div>
-        </div>
-        <div class="card feature">
-          <div class="icon">R</div>
-          <div>
-            <div style="font-weight:700">Recorded Lessons</div>
-            <div class="small">Short-form recorded lessons that can be cached and distributed offline.</div>
-          </div>
-        </div>
-        <div class="card feature">
-          <div class="icon">P</div>
-          <div>
-            <div style="font-weight:700">Push Alerts</div>
-            <div class="small">SMS or app notifications when important sessions go live.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="impact">
-      <h2>Impact & Testimonials</h2>
-      <div class="grid">
-        <div class="testimonial">
-          <div style="font-weight:700">"Wishland taught us simple soil tests. Our yield improved."</div>
-          <div class="small">— Lakshmi, Farmer</div>
-        </div>
-        <div class="testimonial">
-          <div style="font-weight:700">"Live market updates helped me decide when to sell."</div>
-          <div class="small">— Ramesh, Cooperative member</div>
-        </div>
-        <div class="testimonial">
-          <div style="font-weight:700">"Streaming sessions in our village saved travel time and costs."</div>
-          <div class="small">— Meena, Community Lead</div>
-        </div>
+      <div class="card">
+        <b>Wishland Field</b><div class="small">Crop logs, reminders and training videos.</div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Contact & Get Involved</h2>
-      <div class="grid" style="grid-template-columns:1fr 320px">
-        <div class="card">
-          <p>If you'd like to pilot our apps, join our initiatives or sponsor training, reach out to us.</p>
-          <div style="margin-top:12px">
-            <div style="font-weight:700">Email</div>
-            <div class="small">hello@wishlandtechnology.com</div>
-          </div>
-          <div style="margin-top:12px">
-            <div style="font-weight:700">Phone</div>
-            <div class="small">+91 98765 43210</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <form id="contactForm" class="contact-form" onsubmit="return handleSubmit(event)">
-            <input id="name" type="text" placeholder="Your name" required />
-            <input id="email" type="email" placeholder="Email address" required />
-            <input id="subject" type="text" placeholder="Subject" />
-            <textarea id="message" placeholder="How can we help?" required></textarea>
-            <div style="display:flex;gap:8px">
-              <button class="btn btn-primary" type="submit">Send message</button>
-              <button class="btn btn-outline" type="button" onclick="location.href='#'">Schedule call</button>
-            </div>
-            <div id="feedback" class="small muted" style="margin-top:8px"></div>
-          </form>
-        </div>
-      </div>
+      <h2>Contact</h2>
+      <div class="card"><p>Email: contact@wishlandtechnology.com</p></div>
     </section>
 
   </main>
 
-  <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div style="display:flex;gap:12px;align-items:center">
-        <div class="logo-sm">W</div>
-        <div>
-          <div style="font-weight:700">Wishland Technology</div>
-          <div class="small">Save Earth Initiative</div>
-        </div>
-      </div>
-      <div class="small muted">© 2025 Wishland Technology — Built for farmers, powered by community.</div>
-      <div style="display:flex;gap:10px;align-items:center">
-        <a href="#" class="small">Privacy</a>
-        <a href="#" class="small">Terms</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function handleSubmit(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const fb = document.getElementById('feedback');
-      fb.textContent = 'Sending...';
-
-      // For static sites: open mail client as a fallback. For production, integrate Formspree / Netlify Forms / custom API.
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`);
-      const mailto = `mailto:hello@wishlandtechnology.com?subject=${encodeURIComponent('Website contact: '+(subject||'Inquiry'))}&body=${body}`;
-      // try to open mail client
-      window.location.href = mailto;
-      fb.textContent = 'If your email client did not open, please contact hello@wishlandtechnology.com';
-      return false;
-    }
-
-    // Smooth scroll for in-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-      })
-    })
-  </script>
 </body>
 </html>
