@@ -44,30 +44,14 @@
       .hero-grid{grid-template-columns:1fr 420px}
       .grid-3{grid-template-columns:repeat(3,1fr)}
     }
-  </style>
+    /* ANIMATIONS */
+  .fade-in{opacity:0;transform:translateY(20px);animation:fadeInUp .8s ease-out forwards}
+  .fade-in-delay{opacity:0;transform:translateY(20px);animation:fadeInUp 1s ease-out forwards .3s}
+  @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">W</div>
-        <div>
-          <div style="font-size:15px">Wishland Technology</div>
-          <div style="font-size:12px;color:var(--muted)">WireWhat Platform</div>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#wirewhat">WireWhat</a></li>
-          <li><a href="#saveearth">Save Earth</a></li>
-          <li><a href="#solutions">Solutions</a></li>
-          <li><a href="#apps">Apps</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <a class="btn btn-primary" href="#contact">Get in touch</a>
-    </div>
-  </header>
+  
 
   <main class="container">
 
@@ -75,7 +59,7 @@
     
 
     <!-- UPDATED HERO: WIREWHAT FIRST -->
-    <section class="hero">
+    <section class="fade-in" class="hero">
       <div class="hero-grid">
         <div>
           <div class="pill" style="display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:600;margin-bottom:12px">WireWhat • Real-time Media Platform</div>
@@ -101,7 +85,7 @@
     </section>
 
     <!-- NEW WIREWHAT SECTION -->
-    <section id="wirewhat">
+    <section class="fade-in" id="wirewhat">
       <h2>WireWhat — Enterprise Media Platform</h2>
       <p style="color:var(--muted);max-width:720px;margin-bottom:24px">
         WireWhat is a highly anticipated real‑time media and communication
@@ -148,8 +132,115 @@
       </div>
     </section>
 
-    <!-- SAVE EARTH (RENAMED + MOVED BELOW WIREWHAT) -->
-    <section id="saveearth">
+    <!-- WHY CHOOSE WISHLAND TECHNOLOGY -->
+    <section class="fade-in" id="whyus">
+      <h2>Why Choose Wishland Technology?</h2>
+      <div class="grid grid-3" style="margin-top:20px">
+        <div class="card"><b>Proven Real‑Time Infrastructure</b><div class="small">Optimized for low latency, high availability, and reliable global delivery.</div></div>
+        <div class="card"><b>Enterprise‑Ready Architecture</b><div class="small">Security, observability, autoscaling, and compliance built into every layer.</div></div>
+        <div class="card"><b>Eco‑Driven Innovation</b><div class="small">Technology aligned with sustainability, community upliftment, and environmental responsibility.</div></div>
+      </div>
+    </section>
+
+    <!-- ROADMAP & UPCOMING FEATURES -->
+    <section class="fade-in" id="roadmap">
+      <h2>Roadmap & Upcoming Features</h2>
+      <p style="color:var(--muted);max-width:720px">A glimpse into what's coming next for WireWhat and our sustainability programs.</p>
+      <div class="grid grid-3" style="margin-top:20px">
+        <div class="card"><b>WireWhat Studio</b><div class="small">A browser‑based streaming and alert dashboard for creators and organizations.</div></div>
+        <div class="card"><b>AI‑Powered Alert Routing</b><div class="small">Smarter delivery of notifications based on behavior, region, or urgency.</div></div>
+        <div class="card"><b>Edge Streaming Nodes</b><div class="small">Local caching and faster playback for rural and low‑connectivity zones.</div></div>
+      </div>
+      <div class="grid grid-3" style="margin-top:20px">
+        <div class="card"><b>Multi‑Language Captions</b><div class="small">Live translated subtitles for training, education, and community sessions.</div></div>
+        <div class="card"><b>Save Earth AR Learning</b><div class="small">Interactive augmented‑reality lessons on soil, water, seeds, and farming.</div></div>
+        <div class="card"><b>Open Developer API</b><div class="small">Integrate WireWhat into your apps with secure REST + Webhooks.</div></div>
+      </div>
+    </section>
+
+    <!-- WIREWHAT FLOW SECTIONS -->
+
+    <!-- HIGH-LEVEL APPLICATION FLOW -->
+    <section class="fade-in" id="flow-overview">
+      <h2>WireWhat Application Flow</h2>
+      <p style="color:var(--muted);max-width:760px">A clear overview of how publishers, WireWhat services, and subscribers work together to deliver seamless, real-time media and alerts.</p>
+
+      <div class="card" style="margin-top:20px;text-align:center;padding:24px">
+        <svg width="100%" height="140" xmlns="http://www.w3.org/2000/svg">
+          <text x="20" y="70" font-size="16" fill="#0f172a">Publisher (OBS / Mobile / API)</text>
+          <text x="210" y="70" font-size="20" fill="#0b84ff">→</text>
+          <text x="250" y="70" font-size="16" fill="#0f172a">WireWhat Ingest</text>
+          <text x="410" y="70" font-size="20" fill="#0b84ff">→</text>
+          <text x="450" y="70" font-size="16" fill="#0f172a">WireWhat Delivery (HLS / API)</text>
+          <text x="670" y="70" font-size="20" fill="#0b84ff">→</text>
+          <text x="710" y="70" font-size="16" fill="#0f172a">Subscriber (App / Browser)</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- TECHNICAL ARCHITECTURE FLOW -->
+    <section class="fade-in" id="tech-architecture">
+      <h2>Technical Architecture</h2>
+      <p style="color:var(--muted);max-width:760px">A deeper look into the internal components that power WireWhat's performance, reliability, and scalability.</p>
+
+      <div class="grid" style="margin-top:20px;grid-template-columns:repeat(3,1fr)">
+        <div class="card"><b>RTMP Ingest Layer</b><div class="small">Accepts streams from OBS, apps, or hardware encoders with low latency.</div></div>
+        <div class="card"><b>Processing & Transcoding</b><div class="small">Media packaging, adaptive bitrate generation, and stream optimization.</div></div>
+        <div class="card"><b>Alert & Event Engine</b><div class="small">Triggers, automation rules, routing logic, and webhooks.</div></div>
+      </div>
+
+      <div class="grid" style="margin-top:20px;grid-template-columns:repeat(3,1fr)">
+        <div class="card"><b>Delivery Layer</b><div class="small">HLS playback endpoints, caching nodes, and bandwidth‑optimized delivery.</div></div>
+        <div class="card"><b>Developer API</b><div class="small">Secure REST hooks, IAM tokens, subscription endpoints, and metadata APIs.</div></div>
+        <div class="card"><b>Analytics & Monitoring</b><div class="small">Stream health, latency metrics, alert logs, and subscriber insights.</div></div>
+      </div>
+    </section>
+
+    <!-- STEP-BY-STEP WORKFLOW -->
+    <section class="fade-in" id="step-flow">
+      <h2>WireWhat Step‑by‑Step Workflow</h2>
+
+      <div class="grid grid-3" style="margin-top:20px">
+        <div class="card">
+          <div style="font-weight:700">1. Subscriber Request</div>
+          <div class="small">A subscriber requests a live audio/video stream for a specific location or event via the app or web interface.</div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700">2. Publisher Notification</div>
+          <div class="small">Nearby publishers (or registered broadcasters) receive a notification containing the requested location and details so they can respond.</div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700">3. Publisher Accepts & Starts Streaming</div>
+          <div class="small">The publisher accepts the request and starts the live stream using OBS, mobile app, or hardware encoder — sending the feed to WireWhat ingest endpoints.</div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:20px">
+        <div class="card">
+          <div style="font-weight:700">4. AI Content Checks</div>
+          <div class="small">Automated checks run in real-time: GPS verification, nudity detection, copyright detection, and crime/violence filters. Streams failing checks are flagged or queued for review.</div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700">5. Forward for Streaming</div>
+          <div class="small">If checks pass, WireWhat transcodes and forwards the stream to delivery networks (HLS/CDN) and triggers any configured alert/webhook workflows.</div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700">6. Subscriber Receives Video</div>
+          <div class="small">The subscriber receives the live stream in-app or via the embedded player; they can react, request replays, or report content. Telemetry and logs are recorded for auditing.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;color:var(--muted);font-size:13px">
+        <b>Note:</b> The AI checks are configurable — organizations can define strict or relaxed rules, enable human review, or integrate third-party safety services.
+      </div>
+    </section>
+
+<!-- SAVE EARTH (RENAMED + MOVED BELOW WIREWHAT) -->
+    <section class="fade-in" id="saveearth">
       <h2>Upcoming -- Save Earth Initiative (Community Impact Program))</h2>
       <div class="grid grid-3">
         <div class="card feature"><div class="icon">E</div><div><b>Eco-Farming Workshops</b><div class="small">Weekly training streamed to rural communities.</div></div></div>
@@ -160,7 +251,7 @@
 
     <!-- ORIGINAL SECTIONS BELOW (UNCHANGED STRUCTURE) -->
 
-    <section id="solutions">
+    <section class="fade-in" id="solutions">
       <h2>Solutions for Farmers</h2>
       <div class="grid grid-3">
         <div class="card"><b>Field Assistant App</b><div class="small">Offline-first mobile advisory.</div></div>
@@ -169,7 +260,7 @@
       </div>
     </section>
 
-    <section id="apps">
+    <section class="fade-in" id="apps">
       <h2>Apps & Products</h2>
       <div class="card">
         <b>Wishland Field</b><div class="small">Crop logs, reminders and training videos.</div>
@@ -180,7 +271,7 @@
 
       
     <!-- WHO WE ARE MOVED TO BOTTOM -->
-    <section id="whoweare" style="background:linear-gradient(180deg,#eef3f7,#e1efe7);padding:70px 0;border-top:1px solid rgba(0,0,0,0.05);text-align:center">
+    <section class="fade-in" id="whoweare" style="background:linear-gradient(180deg,#eef3f7,#e1efe7);padding:70px 0;border-top:1px solid rgba(0,0,0,0.05);text-align:center">
       <h2 style="font-size:26px;font-weight:800;color:#0f172a">Who We Are</h2>
 
       <p style="color:var(--muted);max-width:760px;margin:0 auto;font-size:16px;line-height:1.6">
@@ -217,7 +308,7 @@
    </section>
 
     <!-- CONTACT MOVED TO BOTTOM -->
-    <section id="contact" style="padding:60px 0">
+    <section class="fade-in" id="contact" style="padding:60px 0">
       <h2>Contact</h2>
       <div class="card" style="padding:24px;font-size:16px">
         <p><b>Email:</b> contact@wishlandtechnology.com</p>
@@ -228,5 +319,22 @@
 
 </main>
 
+  <footer style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:28px 0;margin-top:40px">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="logo" style="width:36px;height:36px;font-size:14px">W</div>
+        <div>
+          <div style="font-weight:700">Wishland Technology</div>
+          <div class="small" style="color:var(--muted)">Innovating for a Connected & Sustainable Future</div>
+        </div>
+      </div>
+      <div class="small" style="color:var(--muted)">© 2025 Wishland Technology. All rights reserved.</div>
+      <div style="display:flex;gap:14px">
+        <a href="#" class="small" style="color:var(--accent)">Privacy</a>
+        <a href="#" class="small" style="color:var(--accent)">Terms</a>
+        <a href="#contact" class="small" style="color:var(--accent)">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
